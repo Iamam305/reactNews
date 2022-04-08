@@ -12,8 +12,7 @@ export class NewsGrid extends Component {
 
   async componentDidMount() {
     console.log('cmd')
-    let url =
-      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=569cd0308ebf4772ae5c5fc0568bd352";
+    let url = process.env.REACT_APP_NEWS_API_URL; ;
     let data = await fetch(url);
     let ParsedData = await data.json();
     console.log(ParsedData);
